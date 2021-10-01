@@ -41,7 +41,7 @@ jobs:
       - run:
           name: rails db:create
           command: |
-            MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+            $MYSQL_ROOT_PASSWORD
             bundle exec rails db:create
 
       - run:
