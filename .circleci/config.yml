@@ -40,9 +40,9 @@ jobs:
           command: sudo apt-get install default-mysql-client
       - run:
           name: rails db:create
-          command: bundle exec rails db:create
-          environment:
-            MYSQL_ROOT_PASSWORD: ＄MYSQL_ROOT_PASSWORD
+          command: |
+            MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+            bundle exec rails db:create
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
