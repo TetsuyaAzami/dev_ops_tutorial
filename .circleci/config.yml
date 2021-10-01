@@ -25,12 +25,12 @@ jobs:
       - image: circleci/mysql:8-ram
         name: "db"
         command: mysqld --default-authentication-plugin=mysql_native_password
-        environment:
-          MYSQL_ROOT_PASSWORD: password
+
     environment:
       BUNDLE_JOBS: "4"
       BUNDLE_RETRY: "3"
       RAILS_ENV: test
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     steps:
       - setup
       - run:
