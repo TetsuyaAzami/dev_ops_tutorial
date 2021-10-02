@@ -11,8 +11,6 @@ services:
       - mysql-data:/var/lib/mysql
   app:
     build: .
-    env_file:
-      - ./environments/db.env
     volumes:
       - .:/myapp
       - bundle:/usr/local/bundle

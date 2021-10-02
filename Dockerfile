@@ -13,4 +13,4 @@ RUN bundle install
 
 ADD . /myapp
 
-RUN apt install vim
+RUN apt-get install vim
