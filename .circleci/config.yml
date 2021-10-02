@@ -45,7 +45,7 @@ jobs:
           name: rails db:create
           command: bundle exec rails db:create
       - run:
-          name: Database setup
+        qqqq  name: Database setup
           command: bundle exec rails db:schema:load --trace
       - ruby/rspec-test
       - ruby/rubocop-check
@@ -58,3 +58,5 @@ workflows:
       - test:
           requires:
             - build
+          context:
+            - docker_hub_password
