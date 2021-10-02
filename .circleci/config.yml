@@ -22,7 +22,10 @@ jobs:
   test:
     docker:
       - image: cimg/ruby:2.7-node
-      - image: circleci/mysql:8-ram
+      - image: zamicode/mysql_with_root_pass:latest
+        auth:
+          username: zamicode
+          password: $DOCKERHUB_PASSWORD
         name: "db"
         command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
@@ -40,9 +43,7 @@ jobs:
           command: sudo apt-get install default-mysql-client
       - run:
           name: rails db:create
-          command: |
-            MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
-            bundle exec rails db:create
+          command: bundle exec rails db:create
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
