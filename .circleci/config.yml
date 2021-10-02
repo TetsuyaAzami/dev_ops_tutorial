@@ -22,10 +22,7 @@ jobs:
   test:
     docker:
       - image: cimg/ruby:2.7-node
-      - image: zamicode/mysql_with_root_pass:latest
-        auth:
-          username: zamicode
-          password: $DOCKERHUB_PASSWORD
+      - image: circleci/mysql:8-ram
         name: "db"
         command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
@@ -58,5 +55,4 @@ workflows:
       - test:
           requires:
             - build
-          context:
-            - docker_hub_password
+
