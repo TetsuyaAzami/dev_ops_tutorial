@@ -10,7 +10,9 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.development
     volumes:
       - .:/myapp
       - bundle:/usr/local/bundle
@@ -25,7 +27,7 @@ services:
       - db
     stdin_open: true
     tty: true
-    
+
 volumes:
   mysql-data:
     driver: local
