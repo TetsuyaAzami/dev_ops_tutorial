@@ -53,3 +53,4 @@ production:
   database: dev_ops_production
   username: <%= Rails.application.credentials.dig(:database,:production_username) %>
   password: <%= Rails.application.credentials.dig(:database,:production_password) %>
+  host: <%= Rails.application.credentials.dig(:database,:production_host) %>

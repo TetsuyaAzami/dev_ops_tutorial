@@ -6,6 +6,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 && apt-get install -y nodejs yarn default-mysql-client
 
 WORKDIR /myapp
+ENV RAILS_ENV="production"
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
