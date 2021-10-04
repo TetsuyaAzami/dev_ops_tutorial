@@ -37,3 +37,6 @@ yarn-debug.log*
 
 /config/credentials/production.key
 environments/db.env
+config/deploy/production.rb
+config/deploy.rb
+
