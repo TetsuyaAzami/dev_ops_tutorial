@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile.production
     volumes:
-      - .:/myappdocker
+      - .:/myapp
       - /var/www/dev_ops_tutorial/shared:/var/www/cap-dp-tutorial/shared
       - bundle:/usr/local/bundle
       - node_modules:/myapp/node_modules
