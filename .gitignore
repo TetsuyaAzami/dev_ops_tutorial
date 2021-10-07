@@ -35,8 +35,9 @@
 yarn-debug.log*
 .yarn-integrity
 
-/config/credentials/production.key
+#他機密情報を含むもの
 environments/db.env
-config/deploy/production.rb
+/config/credentials/production.key
+Capfile
 config/deploy.rb
-
+config/deploy/production.rb
