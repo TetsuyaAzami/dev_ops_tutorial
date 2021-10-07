@@ -5,13 +5,14 @@ services:
       context: .
       dockerfile: Dockerfile.production
     volumes:
-      - .:/myapp
+      - .:/myappdocker network ls
+      - /var/www/dev_ops_tutorial/shared:/var/www/cap-dp-tutorial/shared
       - bundle:/usr/local/bundle
       - node_modules:/myapp/node_modules
       - public-data:/myapp/public
       - tmp-data:/myapp/tmp
       - log-data:/myapp/log
-      
+
     command: bundle exec puma -C config/puma.rb
     ports:
       - "3000:3000"
@@ -29,7 +30,12 @@ services:
       - app
 volumes:
   bundle:
+    name: bundle
   node_modules:
+    name: node_modules
   public-data:
+    name: public-data
   tmp-data:
+    name: tmp-data
   log-data:
+    name: log-data
