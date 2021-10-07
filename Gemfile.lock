@@ -259,7 +259,7 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
-  web-console (>= 4.1.0)
+  web-console
   webpacker (~> 5.0)
 
 RUBY VERSION
